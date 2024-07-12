@@ -1,0 +1,13 @@
+version: '3'
+services:
+  frps:
+    image: eilinge/frps
+    ports:
+      - "7000:7000"
+      - "8080:8080"
+      - "17500:17500"
+      - "8443:8443"
+    volumes:
+      - ./frps.ini:/etc/frp/frps.ini
+      - /etc/ssl/certs:/etc/ssl/certs
+    container_name: frps

@@ -1,0 +1,11 @@
+version: '3'
+services:
+  frpc:
+    image: eilinge/frpc
+    ports:
+      - 8080:8080
+      - 7443:7443
+    volumes:
+      - ./frpc.ini:/etc/frp/frpc.ini
+    container_name: frpc
+    network_mode: host
